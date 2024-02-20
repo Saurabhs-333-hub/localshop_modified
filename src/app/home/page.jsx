@@ -9,7 +9,7 @@ const Home = () => {
         await user.logout()
     }
     return (
-        <div>      <button className="bg-cyan-200 p-2 rounded-lg text-black" onClick={handleLogout}>Logout</button>
+        <div>
         </div>
     )
 }

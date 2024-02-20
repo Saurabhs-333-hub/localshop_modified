@@ -26,8 +26,9 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
             await account.createEmailSession(email, password);
             await saveUsertoDatabase(promise?.$id, email, name, String(process.env.NEXT_PUBLIC_PLACEHOLDER_DEAFULT_IMAGE_ID));
             await checkUser();
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
+            setError(err.message)
         }
     };
     const login = useGoogleLogin({
